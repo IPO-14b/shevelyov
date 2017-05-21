@@ -7,3 +7,12 @@ function ShowProgressMessage(msg) {
         oProgress.innerHTML = msg;
     }
 }
+
+    function showResults() {
+        var duration = (endTime - startTime) / 1000;
+        var bitsLoaded = downloadSize * 8;
+        ShowProgressMessage([
+            "Speed"
+        ]);
+    }
+}
