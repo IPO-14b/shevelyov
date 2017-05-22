@@ -8,6 +8,10 @@ function ShowProgressMessage(msg) {
     }
 }
 
+    download.onerror = function (err, msg) {
+        ShowProgressMessage("Invalid image, or error downloading");
+    }
+
     function showResults() {
         var duration = (endTime - startTime) / 1000;
         var bitsLoaded = downloadSize * 8;
