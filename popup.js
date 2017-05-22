@@ -13,6 +13,12 @@ function InitiateSpeedDetection() {
     window.setTimeout(MeasureConnectionSpeed, 1);
 };
 
+if (window.addEventListener) {
+    window.addEventListener('load', InitiateSpeedDetection, false);
+} else if (window.attachEvent) {
+    window.attachEvent('onload', InitiateSpeedDetection);
+}
+
 function MeasureConnectionSpeed() {
     var startTime, endTime;
     var download = new Image();
@@ -32,7 +38,10 @@ function MeasureConnectionSpeed() {
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
         ShowProgressMessage([
-            "Speed"
+            "Your connection speed is:", 
+            speedBps + " bps", 
+            speedKbps + " kbps", 
+            speedMbps + " Mbps"
         ]);
     }
 }
