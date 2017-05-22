@@ -13,6 +13,12 @@ function InitiateSpeedDetection() {
     window.setTimeout(MeasureConnectionSpeed, 1);
 };
 
+if (window.addEventListener) {
+    window.addEventListener('load', InitiateSpeedDetection, false);
+} else if (window.attachEvent) {
+    window.attachEvent('onload', InitiateSpeedDetection);
+}
+
 function MeasureConnectionSpeed() {
     var startTime, endTime;
     var download = new Image();
