@@ -8,6 +8,11 @@ function ShowProgressMessage(msg) {
     }
 }
 
+function InitiateSpeedDetection() {
+    ShowProgressMessage("Loading the image, please wait...");
+    window.setTimeout(MeasureConnectionSpeed, 1);
+};
+
     download.onerror = function (err, msg) {
         ShowProgressMessage("Invalid image, or error downloading");
     }
