@@ -13,6 +13,14 @@ function InitiateSpeedDetection() {
     window.setTimeout(MeasureConnectionSpeed, 1);
 };
 
+function MeasureConnectionSpeed() {
+    var startTime, endTime;
+    var download = new Image();
+    download.onload = function () {
+        endTime = (new Date()).getTime();
+        showResults();
+    }
+
     download.onerror = function (err, msg) {
         ShowProgressMessage("Invalid image, or error downloading");
     }
