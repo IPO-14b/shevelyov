@@ -50,9 +50,9 @@ function MeasureConnectionSpeed() {
         showResults();
     }
 
-/**
-* Обработчик ошибки загрузки изображения
-*/
+    /**
+    * Обработчик ошибки загрузки изображения
+    */
     download.onerror = function (err, msg) {
         ShowProgressMessage("Invalid image, or error downloading");
     }
