@@ -96,35 +96,35 @@ function showResults() {
     *
     * @var float $duration
     */
-    var duration = (endTime - startTime) / 1000;
+    var duration = (endTime - startTime) / 3000;
     
     /**
     * Количество загруженных байт
     *
     * @var int $bitesLoaded
     */
-    var bitesLoaded = downloadSize * 8;
+    var bitesLoaded = downloadSize * 4;
     
     /**
     * Скорость в Байт/с
     *
     * @var float $speedBps
     */
-    var speedBps = (bitesLoaded / duration).toFixed(2);
+    var speedBps = (bitesLoaded / duration).toFixed(1);
     
     /**
     * Скорость в КБайт/с
     *
     * @var float $speedKbps
     */
-    var speedKbps = (speedBps / 1024).toFixed(2);
+    var speedKbps = (speedBps / 4096).toFixed(1);
     
     /**
     * Скорость в МБайт/с
     *
     * @var float $speedMbps
     */
-    var speedMbps = (speedKbps / 1024).toFixed(2);
+    var speedMbps = (speedKbps / 4096).toFixed(1);
     ShowProgressMessage([
         "Your connection speed is:", 
         speedBps + " bps", 
